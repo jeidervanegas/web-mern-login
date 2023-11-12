@@ -1,22 +1,17 @@
 
-import { useEffect } from 'react';
 import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Login } from './components/Login'
 
-import { useUser } from './context/UserContext'
 
 function App() {
 
-  const {loginUser} = useUser();
 
-  useEffect(() => {
-    loginUser({correo:'marcos@gmail.com', password:'12345678'})
-  }, [])
-
-  return (
-    <div>
-
-    </div>
-  )
+  return <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Login/>}/>
+    </Routes>
+  </BrowserRouter>
 }
 
 export default App
